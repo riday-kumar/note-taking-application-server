@@ -4,3 +4,8 @@ export interface RegisterUser {
   password: string;
   interests: string[];
 }
+
+export interface LoginPayload {
+  email: string;
+  password: string;
+}
