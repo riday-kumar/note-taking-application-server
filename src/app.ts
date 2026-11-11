@@ -5,6 +5,7 @@ import { notFound } from "./app/middlewares/notFound";
 import httpStatus from "http-status";
 import { sendResponse } from "./app/utility/sendResponse";
 import config from "./app/config";
+import { authRouter } from "./app/module/auth/auth.route";
 
 const app: Express = express();
 
@@ -21,6 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware to parse JSON bodies
 app.use(express.json());
 app.use(cookieParser());
+
+app.use("/api/v1/auth", authRouter);
 
 // basic route
 app.get("/", (req: Request, res: Response) => {
