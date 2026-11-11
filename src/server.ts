@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import app from "./app";
 import config from "./app/config";
 import connectToMongoDB from "./app/config/db";
+import User from "./app/module/user/user.model";
 
 const main = async () => {
   const port = Number(config.port) || 5000;
